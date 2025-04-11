@@ -4,6 +4,13 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    position: relative;
+    z-index: 100;
+  }
+
+  .itemsContainer{
+    display: flex;
+    flex-direction: row;
   }
   
   .menu-bars {
@@ -22,6 +29,7 @@
     top: 0;
     left: -100%;
     transition: 850ms;
+    z-index: 1000;
   }
   
   .nav-menu.active {
@@ -52,6 +60,7 @@
   
   .nav-text a:hover {
     background-color: #1a83ff;
+    
   }
   
   .nav-menu-items {
