@@ -1,5 +1,5 @@
 import React from "react";
-import "./loginSignup.css";
+import "./login.css";
 import googlImg from "./Assets/Google.webp";
 import lockImg from "./Assets/lock.png";
 import personImg from "./Assets/person.png"
@@ -13,7 +13,7 @@ function LoginPage() {
             
             <div className="header">
 
-                <div className="text">SignUp</div>
+                <div className="text">Login</div>
                 <div className="underline"></div>
             </div>
 
@@ -52,7 +52,7 @@ function LoginPage() {
 
                 <h3>OR</h3>
 
-                <div className="submit">Craet new Account</div>
+                <div className="submit">Sign Up</div>
 
                 
             </div>
