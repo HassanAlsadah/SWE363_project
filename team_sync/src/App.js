@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
+import UserHomeScreen from './screens/UserHomeScreen';
+import UserTasksScreen from './screens/UserTasksScreen';
+import UserProjectsPage from './screens/UserProjectsPage';
+
 function App() {
   return (
-  <>
-  <Router>
-    <Navbar/>
-    <Routes>
-      <Route path='/' />
-    </Routes>
-  </Router>
+    <Router>
+      <div className="app-container">
+        <Navbar />
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<UserHomeScreen />} />
+            <Route path="/projects" element={<UserProjectsPage/>} />
+            <Route path="/tasks" element={<UserTasksScreen />} />
+            <Route path="/projects/:projectId" element={<UserProjectsPage />} />
 
 
-  </>
-    
-  
- 
-    
+
+            {/* Add other routes here */}
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
