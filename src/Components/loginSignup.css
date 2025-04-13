@@ -1,0 +1,134 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+
+    
+   
+ 
+    background-color: #423647;
+    color: #FBD9FC;
+    
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.text{
+    font-size: 48px;
+    font-weight: 700;
+    color: #FBD9FC;
+}
+
+.underline{
+    width: 160px;
+    height: 4px;
+    border-radius: 10px;
+    background: #FBD9FC;
+
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 25px;
+}
+
+.input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;   
+    width: 60vw;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #FBD9FC;
+}
+
+img{
+    width: 30px;
+    height: 30px;
+    margin: 0px 30px;
+    
+}
+
+.input input{
+    width: 350px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #423647;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.login-btn{
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 20px;
+
+    text-align: center;
+    
+    cursor: pointer;
+    background-color: red;
+}
+
+.forgot-password{
+    margin: auto;
+    margin-top: 20px;
+  
+    align-items: center;
+    color: palevioletred;
+}
+
+.forgot-password span{
+    color: lightskyblue;
+    cursor: pointer;
+}
+
+hr{
+    width: 70%;
+    height: 0.5px;
+    margin-top: 15px;
+    color: #FBD9FC;
+    background-color: #FBD9FC;
+}
+
+.submit-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+.submit{
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    height: 45px;
+    border-radius: 40px;
+    padding: 5px;
+    cursor: pointer;
+   text-align: center;
+   justify-content: center;
+    background-color: lightgrey;
+    font-size: larger;
+    font-weight: 600;
+    color: black;
+    
+}
