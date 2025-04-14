@@ -1,0 +1,43 @@
+.container-info{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px;
+    padding-left: 10px;
+    border: 2px #FBD9FC solid;
+}
+
+.title{
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0px;
+    text-align: start;
+}
+
+.one-info{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.info-title{
+    font-size: larger;
+    font-weight: 700;
+}
+
+.info-answer{
+    color: rgba(216, 112, 147,0.8);
+}
+
+.edit-btn{
+
+    width: 120px;
+    height: 30px;
+    margin: 20px;
+    border-radius: 6px;
+    align-self: self-end;
+    cursor: pointer;
+    background-color: red;
+    text-align: center;
+    font-weight: 800;
+}
