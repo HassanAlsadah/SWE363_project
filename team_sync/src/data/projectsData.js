@@ -108,5 +108,55 @@ export const ProjectsData = [
                 role: "UI Designer"
             }
         ]
+    },
+    {
+        id: "5",
+        name: "SWE46rrr4",
+        status: "in progress",
+        description: "E-commerce platform development",
+        tasks: [
+            {
+                id: "t5",
+                taskName: "Design database",
+                status: "completed"
+            },
+            {
+                id: "t6",
+                taskName: "Implement payment",
+                status: "in progress"
+            }
+        ],
+        members: [
+            {
+                id: "m4",
+                name: "Sareah",
+                role: "UI Designer"
+            }
+        ]
+    },
+    {
+        id: "2",
+        name: "SWE46 new project",
+        status: "in progress",
+        description: "E-commerce platform development",
+        tasks: [
+            {
+                id: "t5",
+                taskName: "Design database",
+                status: "completed"
+            },
+            {
+                id: "t6",
+                taskName: "Implement payment",
+                status: "in progress"
+            }
+        ],
+        members: [
+            {
+                id: "m4",
+                name: "Sareah",
+                role: "UI Designer"
+            }
+        ]
     }
 ];

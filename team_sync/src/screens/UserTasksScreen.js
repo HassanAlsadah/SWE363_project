@@ -10,51 +10,52 @@ function UserTasksScreen() {
             <div className='itemsContainer'>
                 <div className='projectsContainer'>
                     <div className='sectionTitle'>Pending</div>
-                    {TasksData.map((item, index) => {
-                        if (item.status=="Pending"){
-                        return (
-                            <Link to={item.path}>
-                            <div key={index} className='projectContainer'>
+                    {TasksData.filter(item => item.status === "Pending").map((item, index) => (
+                        <Link to={item.path} key={index}>
+                            <div className='projectContainer'>
                                 {item.name}
-                                <div className='statusContainer'>
+                                <div className='statusContainer pending'>
                                     {item.projectName}
                                 </div>
-                            </div></Link>
-                        )}
-                    })}
-
+                                <div style={{ fontSize: '12px', color: '#666' }}>
+                                    Due: {item.dueDate}
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
                 </div>
                 <div className='tasksContainer'>
-                    <div className='sectionTitle'>In progress</div>
-                    {TasksData.map((item, index) => {
-                        if (item.status=="In progress"){
-                        return (
-                            <Link to={item.path}>
-                            <div key={index} className='projectContainer'>
+                    <div className='sectionTitle'>In Progress</div>
+                    {TasksData.filter(item => item.status === "In progress").map((item, index) => (
+                        <Link to={item.path} key={index}>
+                            <div className='projectContainer'>
                                 {item.name}
-                                <div className='statusContainer'>
+                                <div className='statusContainer in-progress'>
                                     {item.projectName}
                                 </div>
-                            </div></Link>
-                        )}
-                    })}
+                                <div style={{ fontSize: '12px', color: '#666' }}>
+                                    Due: {item.dueDate}
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
                 </div>
                 <div className='chatsContainer'>
                     <div className='sectionTitle'>Completed</div>
-                    {TasksData.map((item, index) => {
-                        if (item.status=="Completed"){
-                        return (
-                            <Link to={item.path}>
-                            <div key={index} className='projectContainer'>
+                    {TasksData.filter(item => item.status === "Completed").map((item, index) => (
+                        <Link to={item.path} key={index}>
+                            <div className='projectContainer'>
                                 {item.name}
-                                <div className='statusContainer'>
+                                <div className='statusContainer completed'>
                                     {item.projectName}
                                 </div>
-                            </div></Link>
-                        )}
-                    })}
+                                <div style={{ fontSize: '12px', color: '#666' }}>
+                                    Completed: {item.completedDate}
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
                 </div>
-
             </div>
         </div>
     );
