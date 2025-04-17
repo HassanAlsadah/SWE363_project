@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import CreateProject from './CreateProject';
+import ChatList from './ChatList';
+import ProjectChat from './ProjectChat';
+import { Routes, Route } from 'react-router-dom'; // ✅ Remove Router here
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+
+      {/* REMOVE the direct rendering below or make conditional if needed */}
+      {/*<CreateProject />*/}
+      {  <ChatList /> }
+      { /*<ProjectChat />*/ }
     </div>
   );
 }
