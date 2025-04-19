@@ -1,0 +1,19 @@
+/* components/Chat/ChatPage.css */
+.chat-page {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-page h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  .chat-page p {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  

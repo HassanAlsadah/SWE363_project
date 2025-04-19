@@ -1,0 +1,98 @@
+/* components/Dashboard/Dashboard.css */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .dashboard-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .dashboard-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-card h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .dashboard-card p {
+    color: #4b5563;
+  }
+  
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .stat-box {
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  
+  .stat-box span {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+  }
+  
+  .blue {
+    color: #3b82f6;
+  }
+  
+  .green {
+    color: #10b981;
+  }
+  
+  .yellow {
+    color: #f59e0b;
+  }
+  
+  .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .activity-item {
+    padding-left: 1rem;
+    border-left-width: 4px;
+  }
+  
+  .activity-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+  }
+  
+  .activity-sub {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  .green-border {
+    border-color: #10b981;
+  }
+  
+  .yellow-border {
+    border-color: #f59e0b;
+  }
+  
+  .gray-border {
+    border-color: #6b7280;
+  }
+  

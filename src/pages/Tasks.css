@@ -1,0 +1,112 @@
+/* components/Tasks/Tasks.css */
+.tasks-page {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .add-button {
+    background-color: #10b981;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+  
+  .add-form {
+    background-color: #f9fafb;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-grid input,
+  .form-grid select {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .cancel {
+    background: #e5e7eb;
+    color: #1f2937;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+  }
+  
+  .save {
+    background: #10b981;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+  }
+  
+  .tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tasks-table th,
+  .tasks-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.875rem;
+  }
+  
+  .status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+  
+  .status.completed {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .status.in-progress {
+    background-color: #fef3c7;
+    color: #92400e;
+  }
+  
+  .status.not-started {
+    background-color: #f3f4f6;
+    color: #374151;
+  }
+  
+  .edit {
+    color: #4b5563;
+    margin-right: 0.75rem;
+    cursor: pointer;
+  }
+  
+  .delete {
+    color: #ef4444;
+    cursor: pointer;
+  }
+  

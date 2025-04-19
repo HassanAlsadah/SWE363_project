@@ -1,0 +1,19 @@
+/* components/Settings/SettingsPage.css */
+.settings-page {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .settings-page h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  .settings-page p {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
