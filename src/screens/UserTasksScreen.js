@@ -1,5 +1,5 @@
 import React from 'react';
-import './UserHomeScreen.css';
+import '../styles/UserHomeScreen.css';
 import { Link } from 'react-router-dom';
 import { TasksData } from '../data/TasksData';
 

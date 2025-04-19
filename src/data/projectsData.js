@@ -1,4 +1,4 @@
-export const ProjectsData = [
+export let ProjectsData = [
     {
         id: "1",
         name: "SWE363",
@@ -20,12 +20,14 @@ export const ProjectsData = [
             {
                 id: "m1",
                 name: "Hassan",
-                role: "Project Leader"
+                role: "Project Leader",
+                isLeader: false,
             },
             {
                 id: "m2",
                 name: "Ahmed",
-                role: "Developer"
+                role: "Developer",
+                isLeader: true,
             }
         ]
     },
@@ -80,7 +82,8 @@ export const ProjectsData = [
             {
                 id: "m3",
                 name: "Sarah",
-                role: "UI Designer"
+                role: "UI Designer",
+                isLeader: true,
             }
         ]
     },
@@ -105,7 +108,8 @@ export const ProjectsData = [
             {
                 id: "m4",
                 name: "Sareah",
-                role: "UI Designer"
+                role: "UI Designer",
+                isLeader: true,
             }
         ]
     },
@@ -130,7 +134,8 @@ export const ProjectsData = [
             {
                 id: "m4",
                 name: "Sareah",
-                role: "UI Designer"
+                role: "UI Designer",
+                isLeader: true,
             }
         ]
     },
@@ -155,8 +160,14 @@ export const ProjectsData = [
             {
                 id: "m4",
                 name: "Sareah",
-                role: "UI Designer"
+                role: "UI Designer",
+                isLeader: true,
             }
         ]
     }
 ];
+
+export const addNewProject = (newProject) => {
+    ProjectsData = [...ProjectsData, newProject];
+    return ProjectsData;
+};

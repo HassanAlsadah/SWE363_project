@@ -1,7 +1,8 @@
 import React from 'react';
-import './UserHomeScreen.css';
+import '../styles/UserHomeScreen.css';
 import { ProjectsData } from '../data/projectsData';
 import { TasksData } from '../data/TasksData';
+import { chats } from '../data/chatsData';
 import { Link } from 'react-router-dom';
 
 function UserHomeScreen() {
@@ -10,6 +11,9 @@ function UserHomeScreen() {
     const inProgressTasks = TasksData.filter(task => task.status === "In progress").slice(0, 3);
     const recentTasks = [...pendingTasks, ...inProgressTasks].slice(0, 3);
 
+    // Get recent chats (first 3)
+    const recentChats = chats.slice(0, 3);
+
     return (
         <div className='pageContainer'>
             <h1>Home Page</h1>
@@ -17,7 +21,7 @@ function UserHomeScreen() {
                 <div className='projectsContainer'>
                     <div className='sectionTitle'>My Projects</div>
                     {ProjectsData.map((project) => (
-                        <Link to={project.path} key={project.id}>
+                        <Link to={`/projects/${project.id}`} key={project.id}>
                             <div className='projectContainer'>
                                 {project.name}
                                 <div className={`statusContainer ${project.status.toLowerCase().replace(' ', '-')}`}>
@@ -56,24 +60,30 @@ function UserHomeScreen() {
 
                 <div className='chatsContainer'>
                     <div className='sectionTitle'>Recent Chats</div>
-                    <div className='chatContainer'>
-                        Hassan Ahmed
-                        <div className='statusContainer online'>
-                            Online
-                        </div>
-                    </div>
-                    <div className='chatContainer'>
-                        Sarah Johnson
-                        <div className='statusContainer'>
-                            Offline
-                        </div>
-                    </div>
-                    <div className='chatContainer'>
-                        Michael Brown
-                        <div className='statusContainer online'>
-                            Online
-                        </div>
-                    </div>
+                    {recentChats.map((chat) => (
+                        <Link to={`/chat/${chat.id}`} key={chat.id} state={{ chat }}>
+                            <div className='chat-card'>
+                                <div className='chat-avatar'>{chat.name.charAt(0)}</div>
+                                <div className='chat-content'>
+                                    <div className='chat-header'>
+                                        <strong>{chat.name}</strong>
+                                        <span className='chat-time'>
+                                            {chat.messages?.length > 0 
+                                                ? chat.messages[chat.messages.length - 1].time 
+                                                : ''}
+                                        </span>
+                                    </div>
+                                    <p className='chat-preview'>
+                                        {chat.messages?.length > 0 
+                                            ? `${chat.messages[chat.messages.length - 1].sender.split(' ')[0]}: ${chat.messages[chat.messages.length - 1].text}`
+                                            : 'No messages yet'}
+                                    </p>
+                                    {chat.project && <span className='chat-project'>{chat.project}</span>}
+                                </div>
+                                {chat.unread > 0 && <div className='unread-badge'>{chat.unread}</div>}
+                            </div>
+                        </Link>
+                    ))}
                 </div>
             </div>
         </div>
