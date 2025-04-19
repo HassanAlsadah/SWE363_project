@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddTaskScreen from './screens/AddTaskScreen';
+import TaskInformationScreen from './screens/TaskInformationScreen';
 import './App.css';
 
 function App() {
@@ -8,8 +9,10 @@ function App() {
       <div className="app-container">
         <div className="main-content">
           <Routes>
-            <Route path="/projects/:projectId/add-task" element={<AddTaskScreen />} />
-            {/* Add other routes here */}
+          <Route path="/projects/:projectId/add-task" element={<AddTaskScreen />} />
+
+
+            
           </Routes>
         </div>
       </div>

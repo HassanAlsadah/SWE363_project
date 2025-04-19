@@ -28,6 +28,56 @@
   color: #61dafb;
 }
 
+
+
+.task-info-page{
+ background-color: rgb(44, 27, 46);
+  text-align: center;
+  padding: 2rem;
+}
+
+
+
+
+.task-info-page>h1{
+  justify-content: center;
+  font-size: 3rem ;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+}
+
+.task-info-container{
+  background-color: rgb(151, 132, 154);
+  border-radius: 1rem;
+  padding: 1rem;
+  
+}
+
+.task-info-container > .task-info, .task-attach{
+  background-color: rgb(41, 27, 40);
+  border-radius: 1rem;
+  padding: 0.8rem;
+  margin: 1rem;
+  text-align: left;
+  color: white;
+  font-size: larger;
+}
+label{
+  margin-right: 1rem;
+}
+
+select {
+  width: 10rem;
+  height: 2.5rem;
+  font-size: 1rem; /* controls the text size */
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+a{
+  color: rgb(119, 119, 248);
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

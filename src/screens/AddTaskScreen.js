@@ -33,7 +33,7 @@ const AddTaskScreen = () => {
       status: "pending"
     };
     addTaskToProject(projectId, newTask);
-    navigate(`/projects/${projectId}`); // Redirect back to project after submission
+    navigate(`/projects/${projectId}`);// Redirect back to project after submission
   };
 
   const handleCancel = () => {
