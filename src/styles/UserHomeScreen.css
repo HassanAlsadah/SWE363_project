@@ -1,0 +1,168 @@
+/* Home Screen Styles - Responsive */
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.itemsContainer {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.projectsContainer, .tasksContainer, .chatsContainer {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    min-height: 400px;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.projectContainer, .taskContainer, .chat-card {
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease;
+    position: relative;
+    border-left: 4px solid #259bce;
+}
+
+.projectContainer:hover, .taskContainer:hover, .chat-card:hover {
+    background-color: #e6f7ff;
+    transform: translateY(-2px);
+}
+
+.statusContainer {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+.statusContainer.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.statusContainer.in-progress {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.taskDueDate {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.chat-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #259bce;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.chat-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-time {
+    font-size: 12px;
+    color: #666;
+}
+
+.chat-preview {
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-project {
+    font-size: 12px;
+    padding: 2px 8px;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+}
+
+.unread-badge {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    background-color: #ff4d4f;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .itemsContainer {
+        flex-direction: column;
+    }
+    
+    .projectsContainer, .tasksContainer, .chatsContainer {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .pageContainer {
+        padding: 15px;
+    }
+    
+    .projectContainer, .taskContainer, .chat-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sectionTitle {
+        font-size: 16px;
+    }
+    
+    .chat-avatar {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
