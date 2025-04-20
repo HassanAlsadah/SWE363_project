@@ -14,6 +14,8 @@ to platform for organizations seeking an all-in-one project management solution.
 
 # Setup and installation instructions.
 
+The completed system exists in the main branch
+
 Before running the project, make sure to install these required dependencies:
 ### npm install
 
@@ -26,4 +28,18 @@ In the project directory, you can run:
 ### npm start
 
 
+# Usage instructions and examples.
+
+There is a demonstration video in the main branch 
+
+
+# Team member names and roles.
+
+Hassan Alsadah (leader) | 202157890 
+Mohammed Allail (co-leader)| 202152850
+Ali Lutfallah | 202173550 
+Abbas Alali | 202167590
+Hussain Alibrahim | 202165950
+Ahmed Al Zuabi | 201968070
+ 
 
