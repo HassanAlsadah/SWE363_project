@@ -1,18 +1,21 @@
 const express = require('express');
+const { protect } = require('../middleware/auth');
+const {
+  getMyProjects,
+  getProject,
+  createProject,
+  updateProject,
+  deleteProject,
+  addMember
+} = require('../controllers/projectController');
+
 const router = express.Router();
-const projectController = require('../controllers/projectController');
 
-// Project CRUD
-router.get('/', projectController.getAllProjects);
-router.post('/', projectController.createProject);
-router.get('/:id', projectController.getProject);
-router.put('/:id', projectController.updateProject);
-router.delete('/:id', projectController.deleteProject);
-
-// Task operations
-router.post('/:projectId/tasks', projectController.addTask);
-
-// Member operations
-router.post('/:projectId/members', projectController.addMember);
+router.get('/my-projects', protect, getMyProjects); // Fetch user-specific projects
+router.get('/:id', protect, getProject);           // Fetch project by ID
+router.post('/', protect, createProject);          // Create a new project
+router.put('/:id', protect, updateProject);        // Update a project
+router.delete('/:id', protect, deleteProject);     // Delete a project
+router.post('/:projectId/members', protect, addMember); // Add a member to a project
 
 module.exports = router;

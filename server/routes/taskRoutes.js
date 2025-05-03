@@ -1,11 +1,11 @@
-// routes/chatRoutes.js
+// routes/taskRoutes.js
 const express = require('express');
 const router = express.Router();
 const { protect } = require('../middleware/auth');
 const {
-  getRecentChats
-} = require('../controllers/chatController');
+  getRecentTasks
+} = require('../controllers/taskController');
 
-router.get('/recent', protect, getRecentChats);
+router.get('/recent', protect, getRecentTasks);
 
 module.exports = router;

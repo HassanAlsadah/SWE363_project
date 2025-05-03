@@ -22,6 +22,11 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/v1/auth', require('./routes/authRoutes'));
 app.use('/api/v1/users', require('./routes/userRoutes'));
+app.use('/api/v1/tasks', require('./routes/taskRoutes'));
+app.use('/api/v1/chats', require('./routes/chatRoutes'));
+
+const projectRoutes = require('./routes/projectRoutes');
+app.use('/api/v1/projects', projectRoutes);
 
 // Error handling middleware
 const errorHandler = (err, req, res, next) => {

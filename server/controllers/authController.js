@@ -5,20 +5,33 @@ const crypto = require('crypto');
 
 // Helper function to generate token
 const sendTokenResponse = (user, statusCode, res) => {
-  // Create token with proper expiration handling
+  // Validate and format expiration time
+  const expiresIn = process.env.JWT_EXPIRE;
+  let jwtExpire;
+  
+  if (!expiresIn) {
+    jwtExpire = '1h'; // Default fallback
+  } else if (/^\d+$/.test(expiresIn)) {
+    jwtExpire = Number(expiresIn); // Convert string numbers to actual numbers
+  } else {
+    jwtExpire = expiresIn; // Use string values like "1h", "2d", etc.
+  }
+
+  // Create token with validated expiration
   const token = jwt.sign(
     { id: user._id }, 
     process.env.JWT_SECRET,
     {
-      expiresIn: process.env.JWT_EXPIRE || '1h' // Fallback to 1 hour if not set
+      expiresIn: jwtExpire
     }
   );
 
-  // Cookie options
+  // Calculate cookie expiration (default 1 day)
+  const cookieExpireDays = Number(process.env.JWT_COOKIE_EXPIRE) || 1;
+  const cookieExpireMs = cookieExpireDays * 24 * 60 * 60 * 1000;
+
   const options = {
-    expires: new Date(
-      Date.now() + (process.env.JWT_COOKIE_EXPIRE || 1) * 24 * 60 * 60 * 1000 // Default 1 day
-    ),
+    expires: new Date(Date.now() + cookieExpireMs),
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'strict'
