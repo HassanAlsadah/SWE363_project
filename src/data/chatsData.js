@@ -1,3 +1,4 @@
+//chatsData
 export let chats = [
     {
       id: 1,

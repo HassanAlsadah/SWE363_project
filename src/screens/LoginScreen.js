@@ -1,31 +1,51 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { dummyUsers } from "../data/users";
 import "../styles/Login.css";
 import { FaGoogle, FaUser, FaLock, FaArrowRight } from "react-icons/fa";
+import { api } from "../utils/api";
 
 function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
+    setIsLoading(true);
 
-    // Find user with matching credentials
-    const user = dummyUsers.find(
-      (user) => user.email === email && user.password === password
-    );
+    try {
+      const response = await fetch(api.auth.login, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    if (user) {
-      // Store user data in localStorage
-      localStorage.setItem("currentUser", JSON.stringify(user));
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Login failed");
+      }
+
+      // Store user data and token
+      localStorage.setItem("currentUser", JSON.stringify(data.user));
+      localStorage.setItem("token", data.token);
+      
+      // Set cookie for server-side authentication
+      document.cookie = `token=${data.token}; path=/; ${
+        process.env.NODE_ENV === "production" ? "Secure; SameSite=Strict" : ""
+      }`;
+
       // Redirect to home page
       navigate("/");
-    } else {
-      setError("Invalid email or password");
+    } catch (err) {
+      setError(err.message || "Invalid email or password");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -59,12 +79,20 @@ function LoginScreen() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              minLength="6"
             />
           </div>
         </div>
 
-        <button type="submit" className="login-btn">
-          <h3>Login <FaArrowRight className="arrow-icon" /></h3>
+        <button 
+          type="submit" 
+          className="login-btn"
+          disabled={isLoading}
+        >
+          <h3>
+            {isLoading ? "Logging in..." : "Login"}{" "}
+            <FaArrowRight className="arrow-icon" />
+          </h3>
         </button>
       </form>
 
