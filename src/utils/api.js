@@ -39,6 +39,9 @@ export const api = {
   users: {
     getAll: `${API_BASE_URL}/users`, // Get all users
     search: (searchTerm, projectId) => `${API_BASE_URL}/users?search=${searchTerm}&excludeProject=${projectId}`, // Search users excluding project members
+    getMe: `${API_BASE_URL}/users/me`,  // Add this for user profile
+    updateDetails: `${API_BASE_URL}/users/update-details`,  // For settings page
+    updatePassword: `${API_BASE_URL}/users/update-password`
   },
 };
 

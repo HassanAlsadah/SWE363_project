@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { getAllUsers } = require('../controllers/userController');
+const { getMe, updateDetails } = require('../controllers/userController');
 const { protect } = require('../middleware/auth');
 
-// GET /api/v1/users - accessible by all authenticated users
-router.route('/').get(protect, getAllUsers);
+router.route('/me').get(protect, getMe);
+router.route('/update-details').put(protect, updateDetails);
 
 module.exports = router;

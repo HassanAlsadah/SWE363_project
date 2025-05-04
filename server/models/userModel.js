@@ -17,7 +17,20 @@ const UserSchema = new mongoose.Schema({
   },
   phone: {
     type: String,
-    match: [/^\d{10,15}$/, 'Please add a valid phone number']
+    match: [/^\d{10,15}$/, 'Please add a valid phone number'],
+    default: ''
+  },
+  teamsAccount: {
+    type: String,
+    default: ''
+  },
+  degree: {
+    type: String,
+    default: ''
+  },
+  certificates: {
+    type: String,
+    default: ''
   },
   password: {
     type: String,

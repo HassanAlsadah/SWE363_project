@@ -131,3 +131,40 @@
       margin-bottom: 5px;
     }
   }
+  .settings-loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .settings-error {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .settings-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .settings-error button,
+  .settings-success button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
