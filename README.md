@@ -27,6 +27,59 @@ In the project directory, you can run:
 
 ### npm start
 
+🔐 Authentication
+| Method | Endpoint               | Description          |
+| ------ | ---------------------- | -------------------- |
+| POST   | `/auth/register`       | Register new user    |
+| POST   | `/auth/login`          | Login user           |
+| GET    | `/auth/me`             | Get current user     |
+| POST   | `/auth/logout`         | Logout user          |
+| PUT    | `/auth/updatedetails`  | Update user details  |
+| PUT    | `/auth/updatepassword` | Update user password |
+
+📁 Projects
+| Method | Endpoint                          | Description           |
+| ------ | --------------------------------- | --------------------- |
+| GET    | `/projects`                       | Get all projects      |
+| POST   | `/projects`                       | Create a project      |
+| GET    | `/projects/:id`                   | Get a project by ID   |
+| GET    | `/projects/my-projects`           | Get user's projects   |
+| PUT    | `/projects/:id`                   | Update a project      |
+| DELETE | `/projects/:id`                   | Delete a project      |
+| POST   | `/projects/:id/members`           | Add member to project |
+| DELETE | `/projects/:id/members/:memberId` | Remove member         |
+
+
+✅ Tasks
+| Method | Endpoint                             | Description             |
+| ------ | ------------------------------------ | ----------------------- |
+| GET    | `/tasks`                             | Get all tasks           |
+| GET    | `/tasks/recent`                      | Get user's recent tasks |
+| GET    | `/projects/:projectId/tasks`         | Get tasks in a project  |
+| POST   | `/projects/:projectId/tasks`         | Create task             |
+| DELETE | `/projects/:projectId/tasks/:taskId` | Delete task             |
+| PUT    | `/tasks/:taskId`                     | Update task             |
+| POST   | `/tasks/:taskId/comments`            | Add comment             |
+| POST   | `/tasks/:taskId/attachments`         | Upload attachment       |
+| GET    | `/tasks/overdue`                     | Get overdue tasks       |
+
+
+💬 Chats
+| Method | Endpoint        | Description             |
+| ------ | --------------- | ----------------------- |
+| GET    | `/chats`        | Get all chats           |
+| GET    | `/chats/recent` | Get user's recent chats |
+| POST   | `/chats`        | Create chat             |
+| GET    | `/chats/:id`    | Get chat by ID          |
+
+
+👤 Users
+| Method | Endpoint                                      | Description                      |
+| ------ | --------------------------------------------- | -------------------------------- |
+| GET    | `/users`                                      | Get all users                    |
+| GET    | `/users?search=term&excludeProject=projectId` | Search users excluding a project |
+
+
 
 # Usage instructions and examples.
 
